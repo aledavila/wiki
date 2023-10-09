@@ -20,5 +20,5 @@ React - https://reactjs.org
 SASS - https://sass-lang.com
 
 ## Future enhancements 
-- Adding Axe core for accessibility testing
+- Adding Axe-core for accessibility testing
 - Jest and Testing Library for unit testing 
