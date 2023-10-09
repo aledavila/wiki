@@ -1,6 +1,7 @@
 # Top Wikipedia articles
 
-## About
+https://wiki-top.vercel.app/
+
 This is a website that tracks top Wikipedia articles by date. 
 
 ## Quick Start
