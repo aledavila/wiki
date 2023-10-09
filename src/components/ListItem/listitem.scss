@@ -1,0 +1,62 @@
+.list-item--container {
+  background: var(--neutral-000, #fff);
+  height: 72px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  padding: 24px;
+  gap: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--neutral-300, #E7EAEB);
+}
+
+.item-info {
+  font-family: 'Lora', serif;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  span {
+    width: 24px;
+    color: var(--neutral-500, #A7AAAB);
+  }
+
+  h6 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.item-views {
+  display: flex;
+  gap: 20px;
+}
+
+.item--views-count {
+  font-size: 14px;
+  color: var(--neutral-600, #737680);
+}
+
+.pin-button {
+  background: transparent;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+
+  &:hover {
+    background-color: var(--neutral-100, #F5F7F7);
+  }
+}
+
+@media screen and (max-width: 680px) {
+  // adjusted mobile view to account for pin button and long names and views
+  .list-item--container {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

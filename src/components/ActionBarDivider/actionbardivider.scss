@@ -1,0 +1,21 @@
+.action-bar-divider--container {
+  display: flex;
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.action-bar-divider {
+  width: 1px;
+  height: 64px;
+  background: var(--neutral-300, #E7EAEB);
+}
+
+@media screen and (max-width: 680px) {
+  .action-bar-divider--container {
+    display: none;
+  }
+}

@@ -1,0 +1,21 @@
+.grow-button__primary {
+  background: var(--brand-green-500, #025B4B);
+  display: flex;
+  width: 160px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 100px;
+  color: var(--neutral-000, #FFF);
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+}
+
+@media screen and (max-width: 600px) {
+  .grow-button__primary {
+    width: 100%;
+  }
+}

@@ -1,0 +1,30 @@
+.action-bar--container {
+  display: flex;
+  box-sizing: border-box;
+  width: 800px;
+  height: 96px;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 100px;
+  background: var(--neutral-000, #fff);
+  box-shadow: 0px 2px 0px 1px rgba(5, 9, 13, 0.06);
+}
+
+@media screen and (max-width: 800px) {
+  .action-bar--container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .action-bar--container {
+    height: auto;
+    padding: 24px;
+    flex-direction: column;
+    gap: 24px;
+    align-self: stretch;
+    border-radius: 0;
+  }
+}
