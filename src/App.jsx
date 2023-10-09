@@ -6,6 +6,7 @@ import DatePicker from './components/DatePicker/DatePicker';
 import ListItem from './components/ListItem/ListItem';
 import PageSizeOptions from './components/PageSizeOptions/PageSizeOptions';
 import Pagination from './components/Pagination/Pagination';
+import Results from './components/Results/Results';
 import { fetchArticles } from './api';
 import { LOCALSTORAGE_KEY } from './constants';
 import { paginate } from './helpers';
@@ -58,7 +59,7 @@ function App() {
     handleSearch();
   }, []);
 
-  console.log(articles.pinned)
+  console.log(articles.pinned.size)
 
   return (
     <>
@@ -80,31 +81,35 @@ function App() {
           />
           <Button label='Search' onClick={handleSearch} />
         </ActionBar>
-        <div className='results-list pinned-list'>
-        {Array.from(articles.pinned.entries()).map(([key, value]) => (
-          <ListItem
-            key={key}
-            name={value.name.replace(/_/g, ' ')}
-            pinnedArticles={articles.pinned}
-            setArticles={setArticles}
-            views={value.views.toLocaleString()}
-          />
-        ))}
-        </div>
-        <div className='results-list'>
+        {
+          articles.pinned.size !== 0 && (
+            <div className='results-list pinned-list'>
+              {Array.from(articles.pinned.entries()).map(([key, value]) => (
+                <ListItem
+                  key={key}
+                  name={value.name.replace(/_/g, ' ')}
+                  pinnedArticles={articles.pinned}
+                  setArticles={setArticles}
+                  views={value.views.toLocaleString()}
+                />
+              ))}
+            </div>
+          )
+        }
+        <Results results={articles.results}>
           {paginate(articles.results, currentPage, selectedPageSize).map(
-            ({ article, rank, views }, index) => (
-              <ListItem
-                key={index}
-                name={article.replace(/_/g, ' ')}
-                pinnedArticles={articles.pinned}
-                rank={rank}
-                setArticles={setArticles}
-                views={views.toLocaleString()}
-              />
-            )
-          )}
-        </div>
+              ({ article, rank, views }, index) => (
+                <ListItem
+                  key={index}
+                  name={article.replace(/_/g, ' ')}
+                  pinnedArticles={articles.pinned}
+                  rank={rank}
+                  setArticles={setArticles}
+                  views={views.toLocaleString()}
+                />
+              )
+            )}
+        </Results>
         <Pagination
           articlesPerPage={selectedPageSize}
           currentPage={currentPage}
