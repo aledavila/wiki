@@ -59,8 +59,6 @@ function App() {
     handleSearch();
   }, []);
 
-  console.log(articles.pinned.size)
-
   return (
     <>
       <header className='header' />
