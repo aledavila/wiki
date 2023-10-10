@@ -40,3 +40,15 @@
   border: none;
   background: transparent;
 }
+
+
+@media screen and (max-width: 680px) {
+  .pagination-list {
+    gap: 10px;
+  }
+  
+  .pagination-link {
+    width: 35px;
+    height: 35px;
+  }
+}
